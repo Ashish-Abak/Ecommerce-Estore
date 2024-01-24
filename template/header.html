@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-store</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- First Row -->
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg p-3 text-primary bg-light border border-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">E-Store</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Link</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/Cart">Cart</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                          </li>
+                          
+                          {% if user.is_authenticated %}
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+                          </li> 
+                          {% else %}
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/registration">Register</a>
+                          </li>
+                          {% endif %}                       
+                        </ul>
+                        <p>{{GM}}{{GA}}{{GE}}</p>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+        </div>

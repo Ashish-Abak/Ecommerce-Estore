@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+<div class="row mt-4">
+    <div class="col-md-9">
+        <h5 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Customer Details</h5><hr>
+        {% for x in products %}
+        {% if forloop.counter == 1 %}
+        <p><b>Name:</b>&nbsp;&nbsp;{{x.uid.username}}</p>
+        <p><b>Email:</b>&nbsp;&nbsp;{{x.uid.username}}</p>
+        <p><b>Contact:</b>&nbsp;&nbsp;{{x.uid.contact}}</p>
+        {% endif %}
+        {% endfor %}
+        <div class="">
+            <h5 class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">Order Summery</h5>
+        </div>
+        <div class="row shadow border p-5">
+            {% for x in products %}
+            <div class="row shadow mb-5" style="height: 300px;">
+            <div class="col-md-4">
+                <img src="{{x.pid.pimage.url}}" width="228px" height="268px" alt="">
+            </div>
+            <div class="col-md-8">
+                <p><b>Product Name: </b>&nbsp;&nbsp;{{x.pid.name}}</p>
+                <p><b>Price: </b>&nbsp;&nbsp;{{x.pid.price}}INR</p>
+                <p><b>Category: </b>&nbsp;&nbsp;{{x.pid.cat}}</p>
+                <p><b>Product Description: </b>&nbsp;&nbsp;{{x.pid.pdetails}}</p>
+                <p><b>Qty:</b>&nbsp;&nbsp;{{x.qty}}</p><br>
+                    <a href="/removes/{{x.id}}"><button class="btn btn-danger">Remove</button></a>
+                </div></div>
+                {% endfor %}
+        </div><br>
+    </div>
+    <div class="col-md-3">
+      <div class="shadow p-3 mar">
+        <h4>Price Details</h4>
+        <p><b>Price({{np}} items):</b>Rs.{{total}}</p><hr>
+        <p><b>Total Amount:</b>Rs.{{total}}</p>
+        <a href="/makepayment"><button class="btn btn-danger">Make Payment</button></a>
+      </div>
+    </div>
+</div>
+{% endblock 'main' %}

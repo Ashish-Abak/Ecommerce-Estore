@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block 'main' %}
+
+{% for x in products %}
+<div class="row mt-5 mx-auto">
+    <div class="col-md-6">
+        <img src="{{x.pimage.url}}" width="50%" alt="mobile img">
+    </div>
+    <div class="col-md-6 mt-5">
+        <p><b>Product Name: </b>{{x.name}}</p>
+        <p><b>Price: </b>Rs.{{x.price}}</p>
+        <p><b>Category: </b>
+            {% if x.cat == 1 %}
+            <p class="card-text">Mobile</p>
+            {% elif x.cat == 2 %}
+            <p class="card-text">Shoes</p>
+            {% else %}
+            <p class="card-text">Cloths</p>
+            {% endif %}
+        </p>
+        <p><b>Product Description: </b>{{x.pdetails}}</p><br>
+        <a href="/addtocart/{{x.id}}"><button class="btn btn-danger">Add to Cart</button></a>
+        <a href="/Cart"><button class="btn btn-danger">View Cart</button></a>
+        <a href="/home"><button class="btn btn-danger">Shop more</button></a>
+        <br><br>
+        {% if msg %}
+        <div class="alert alert-danger">
+          {{msg}}
+        </div>
+        {% endif %}
+        {% if success %}
+        <div class="alert alert-success">
+          {{success}}
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="alert alert-danger">
+          {{error}}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+{% endblock 'main' %}
