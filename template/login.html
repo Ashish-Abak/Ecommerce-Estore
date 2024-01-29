@@ -3,7 +3,7 @@
 {% block 'main' %}
 <div class="container">
     <div class="row">
-            <div class="col-md-4 shadow mt-5 p-4">
+            <div class="col-md-4 shadow mt-5 p-4 rounded-5" style="position: relative; left: 450px; ">
                 <h2 class="text-center">Login</h2>
                 {% if errmsg %}
               <div class="alert alert-danger">
@@ -16,14 +16,15 @@
                 <label for="Input1" class="form-label">Username</label>
                 <input type="text" class="form-control" name="uname" id="Input1" placeholder="Enter Username">
               </div>
-              <div class="mb-3">
+              <div class="mb-1">
                 <label for="Input2" class="form-label">Password</label>
                 <input type="password" class="form-control" name="upass" id="Input2" placeholder="Enter Password">
               </div>
               <div class="mb-3">
                 <label for="Input4" class="form-label"></label>
-                <input type="submit" class="btn btn-success" value="Login" id="Input4">
-                <span>New User? <a href="/registration" style="text-decoration: none;">Register</a></span>
+                <input type="submit" class="btn btn-success w-100" value="Login" id="Input4">
+                <div class="text-center"><span >New User? <a href="/registration" style="text-decoration: none;">Register</a></span>
+                </div>
               </div>
             </form>
             </div>
