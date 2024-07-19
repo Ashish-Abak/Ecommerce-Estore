@@ -4,5 +4,7 @@
 .size{
     width: 100%;
     height: 300px;
-
+}
+#cen{
+    margin-left: 450px;    
 }

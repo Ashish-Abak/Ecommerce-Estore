@@ -2,8 +2,8 @@
 
 {% block 'main' %}
 <div class="container">
-    <div class="row">
-            <div class="col-md-4 shadow mt-5 p-4">
+    <div class="row" id="cen">
+            <div class="col-md-6 shadow mt-5 rounded-5 p-4">
                 <h2 class="text-center">Registration</h2>
                 {% if errmsg %}
                 <div class="alert alert-danger">
@@ -20,14 +20,15 @@
                 <label for="Input2" class="form-label">Password</label>
                 <input type="password" class="form-control" name="upass" id="Input2" placeholder="Enter Password">
               </div>
-              <div class="mb-3">
+              <div class="mb-1">
                 <label for="Input3" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" name="ucpass" id="Input3" placeholder="Enter confirm password">
               </div>
               <div class="mb-3">
                 <label for="Inpu41" class="form-label"></label>
-                <input type="submit" class="btn btn-primary" value="Register" id="Input4">
-                <span>Already User? <a href="/login" style="text-decoration: none;">Login</a></span>
+                <input type="submit" class="btn btn-primary w-100" value="Register" id="Input4">
+                <div class="text-center"><span>Already User? <a href="/login" style="text-decoration: none;">Login</a></span>
+                </div>
               </div>
               {% if success %}
               <div class="alert alert-success">

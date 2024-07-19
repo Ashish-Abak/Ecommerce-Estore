@@ -31,9 +31,9 @@
       <div class="row">
         {% for x in products %}
       <div class="col-md-4 mb-3">
-        <div class="card p-3">
+        <div class="card p-3 w-100 h-100">
           <img src="{{x.pimage.url}}" class="card-img-top size" alt="">
-          <div class="card-body text-center bg-light">
+          <div class="card-body text-botom bg-light h-25">
             <h5 class="card-title">{{x.name}}</h5>
             <p class="card-text">Rs.{{x.price}}</p>
             {% if x.cat == 1 %}
